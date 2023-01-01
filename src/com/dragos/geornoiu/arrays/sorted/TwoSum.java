@@ -49,22 +49,20 @@ public class TwoSum {
         int[] numbers = new int[]{2, 7, 11, 15};
         int target = 9;
         int[] results = twoSumBinarySearch(numbers, target);
-        assert results[0] == 0;
-        assert results[1] == 1;
+        assert results[0] == 1;
+        assert results[1] == 2;
 
         int[] numbers2 = new int[]{2, 3, 4};
         int target2 = 6;
         int[] results2 = twoSumBinarySearch(numbers2, target2);
-        assert results2[0] == 0;
-        assert results2[1] == 2;
-
+        assert results2[0] == 1;
+        assert results2[1] == 3;
 
         int[] numbers3 = new int[]{-1, 0};
         int target3 = -1;
         int[] results3 = twoSumBinarySearch(numbers3, target3);
-        assert results3[0] == 0;
-        assert results3[1] == 1;
-
+        assert results3[0] == 1;
+        assert results3[1] == 2;
     }
 
     //binary search approach
@@ -90,9 +88,9 @@ public class TwoSum {
     }
 
     //two pointers approach
-    //interestingly, there is an O(n) solution using two pointers, starting at the beginning and end of the array,
-    //and increasing the left pointer when the sum is lower than the target, and decreasing the right pointer when
-    //the sum is higher than the target
+    //Interestingly, there is an O(n) solution using two pointers which seems faster on many cases.
+    //Starting at the beginning and end of the array, and increasing the left pointer when the sum is lower than the
+    //target, and decreasing the right pointer when≈ the sum is higher than the target
     private static int[] twoSumTwoPointers(int[] numbers, int target) {
         int leftPointer = 0;
         int rightPointer = numbers.length - 1;
