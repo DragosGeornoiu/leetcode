@@ -1,4 +1,4 @@
-package com.dragos.geornoiu.strings;
+package com.dragos.geornoiu.easy;
 
 import java.util.HashMap;
 import java.util.Map;

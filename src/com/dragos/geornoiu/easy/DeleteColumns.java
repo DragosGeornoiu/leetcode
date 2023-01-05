@@ -1,4 +1,4 @@
-package com.dragos.geornoiu.strings;
+package com.dragos.geornoiu.easy;
 
 public class DeleteColumns {
 

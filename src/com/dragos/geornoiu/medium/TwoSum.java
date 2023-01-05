@@ -1,4 +1,4 @@
-package com.dragos.geornoiu.arrays.sorted;
+package com.dragos.geornoiu.medium;
 
 public class TwoSum {
     /**

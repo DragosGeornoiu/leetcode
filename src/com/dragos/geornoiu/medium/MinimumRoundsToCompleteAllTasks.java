@@ -1,9 +1,9 @@
-package com.dragos.geornoiu.arrays.unsorted;
+package com.dragos.geornoiu.medium;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class MinimumRounds {
+public class MinimumRoundsToCompleteAllTasks {
 
     /**
      * 2244. Minimum Rounds to Complete All Tasks
