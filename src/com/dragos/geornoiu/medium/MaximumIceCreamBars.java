@@ -36,9 +36,9 @@ public class MaximumIceCreamBars {
      * <p>
      * Constraints:
      * costs.length == n
-     * 1 <= n <= 105
-     * 1 <= costs[i] <= 105
-     * 1 <= coins <= 108
+     * 1 <= n <= 10^5
+     * 1 <= costs[i] <= 10^5
+     * 1 <= coins <= 10^8
      */
     public static void main(String[] args) {
         int result1 = maxIceCream(new int[]{1, 3, 2, 4, 1}, 7);
@@ -54,6 +54,30 @@ public class MaximumIceCreamBars {
         assert result3 == 6;
     }
 
+    //Although not pretty, there is a O(n) solution for this problem.
+    public static int maxIceCream(int[] costs, int coins) {
+        int[] iceCreamCounter = new int[100001];
+        for (int cost : costs) {
+            iceCreamCounter[cost]++;
+        }
+
+        int maxNoOfIceCreamsToBuy = 0;
+        for(int i=1; i<iceCreamCounter.length; i++) {
+            if(iceCreamCounter[i] == 0) {
+                continue;
+            }
+
+            if(coins / i < iceCreamCounter[i]) {
+                maxNoOfIceCreamsToBuy += coins / i;
+                return maxNoOfIceCreamsToBuy;
+            } else {
+                maxNoOfIceCreamsToBuy += iceCreamCounter[i];
+                coins -= iceCreamCounter[i] * i;
+            }
+        }
+
+        return maxNoOfIceCreamsToBuy;
+    }
 
     // There is also a solution by using a priority queue which raises some inetersting points.
     //
@@ -94,7 +118,7 @@ public class MaximumIceCreamBars {
     // primitives and quicksort is O(n log(n))
     // And the interation is also O(n)
     // Resulting in O(n log(n)) complexity
-    public static int maxIceCream(int[] costs, int coins) {
+    public static int maxIceCreamMySolution(int[] costs, int coins) {
         Arrays.sort(costs);
 
         int noOfIceCreams = 0;
