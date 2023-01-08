@@ -33,13 +33,42 @@ However this is not entirely true. Although creating a PriorityQueue element by 
 O(n log(n)) complexity, creating a PriorityQueue from an existing collection is only O(n).
 Some explications for this can be read here: https://stackoverflow.com/questions/9755721/how-can-building-a-heap-be-on-time-complexity
 
-## Binary search algorithm code and complexity
+## Algorithms
+
+### Binary search algorithm code and complexity
 
 TODO
 
-## Time complexity for sorting algorithms
+### Time complexity for sorting algorithms
 
 * BubbleSort - O(n^2)
 * MergeSort - O(n logn)
 * Quicksort - O(n logn)
 * TimSort - O(n logn) - a variation on MergeSort
+
+## Math
+
+### Line between two or more points (slope)
+
+In mathematics, the slope or gradient of a line is a number that describes both the direction and the steepness of the 
+line. Slope is often denoted by the letter m;
+
+Slope is calculated by finding the ratio of the "vertical change" to the "horizontal change" between (any) two distinct 
+points on a line. Sometimes the ratio is expressed as a quotient ("rise over run"), giving the same number for every 
+two distinct points on the same line. A line that is decreasing has a negative "rise". The line may be practical – 
+as set by a road surveyor, or in a diagram that models a road or a roof either as a description or as a plan.
+
+The steepness, incline, or grade of a line is measured by the absolute value of the slope. A slope with a greater 
+absolute value indicates a steeper line. The direction of a line is either increasing, decreasing, horizontal or vertical.
+* A line is increasing if it goes up from left to right. The slope is positive, m>0 
+* A line is decreasing if it goes down from left to right. The slope is negative, m<0
+* If a line is horizontal the slope is zero. This is a constant function. 
+* If a line is vertical the slope is undefined (see below).
+
+The rise of a road between two points is the difference between the altitude of the road at those two points, say y1 
+and y2, or in other words, the rise is (y2 − y1) = Δy. For relatively short distances, where the Earth's curvature may 
+be neglected, the run is the difference in distance from a fixed point measured along a level, horizontal line, or in 
+other words, the run is (x2 − x1) = Δx. Here the slope of the road between the two points is simply described as the 
+ratio of the altitude change to the horizontal distance between any two points on the line.
+
+In mathematical language, the slope m of the line is: m = (y2 - y1) / (x2 - x1).

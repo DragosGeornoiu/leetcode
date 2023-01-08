@@ -61,13 +61,11 @@ public class GasStation {
         System.out.println(result3);
         assert result3 == 4;
 
-
         int[] gasInput4 = new int[]{5, 8, 2, 8};
         int[] costInput4 = new int[]{6, 5, 6, 6};
         int result4 = canCompleteCircuit(gasInput4, costInput4);
         System.out.println(result4);
         assert result4 == 3;
-
     }
 
     // O(n) solution
