@@ -33,11 +33,74 @@ However this is not entirely true. Although creating a PriorityQueue element by 
 O(n log(n)) complexity, creating a PriorityQueue from an existing collection is only O(n).
 Some explications for this can be read here: https://stackoverflow.com/questions/9755721/how-can-building-a-heap-be-on-time-complexity
 
-## Algorithms
+## Tree
+
+### Binary Tree Traversal
+
+Binary Tree is defined as a tree data structure where each node has at most 2 children. Since each element in a binary 
+tree can have only 2 children, we typically name them the left and right child.
+
+             1
+           /   \
+          12    9
+         /  \
+        5    6
+
+There are a few types of tree traversals:
+
+* Inorder traversal 
+
+First, visit all the nodes in the left subtree. Then the root node. Visit all the nodes in the right subtree.
+
+    inorder(root->left)
+    display(root->data)
+    inorder(root->right)
+
+Result of the previous tree is: [5, 12, 6, 1, 9]
+
+* Preorder traversal
+
+Visit root node. Visit all the nodes in the left subtree. Visit all the nodes in the right subtree.
+
+    display(root->data)
+    preorder(root->left)
+    preorder(root->right)
+
+Result of the previous tree is: [1, 12, 5, 6, 9]
+
+* Postorder traversal
+
+Visit all the nodes in the left subtree. Visit all the nodes in the right subtree. Visit the root node.
+
+    postorder(root->left)
+    postorder(root->right)
+    display(root->data)
+
+Result of the previous tree is: [5, 6, 12, 1, 9]
+
+
+Each algorithm can be done iteratively also, but a stack has to be used for this. The following is an example of the 
+preorder algorithm implemented iteratively:
+
+    if (node = null)
+        return
+    s —> empty stack
+    s.push(node)
+    while (not s.isEmpty())
+        node —> s.pop()
+        visit(node)
+        if (node.right != null)
+            s.push(node.right)
+        if (node.left != null)
+            s.push(node.left)
+
+## Search Algorithms
 
 ### Binary search algorithm code and complexity
 
 TODO
+
+## Sorting Algorithms
 
 ### Time complexity for sorting algorithms
 
