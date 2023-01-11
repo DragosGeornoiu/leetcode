@@ -33,6 +33,37 @@ However this is not entirely true. Although creating a PriorityQueue element by 
 O(n log(n)) complexity, creating a PriorityQueue from an existing collection is only O(n).
 Some explications for this can be read here: https://stackoverflow.com/questions/9755721/how-can-building-a-heap-be-on-time-complexity
 
+## Graphs
+
+In graph theory and computer science, an adjacency list is a collection of unordered lists used to represent a finite 
+graph. Each unordered list within an adjacency list describes the set of neighbors of a particular vertex in the graph. 
+This is one of several commonly used representations of graphs for use in computer programs.
+
+Depth First Traversal (or Search) for a graph is similar to Depth First Traversal of a tree. The only catch here is, 
+that, unlike trees, graphs may contain cycles (a node may be visited twice). To avoid processing a node more than once, 
+use a boolean visited array. A graph can have more than one DFS traversal.
+
+As for trees, there exists inorder/preorder/postorder traversal. The followin is an example of an inorder
+traversal algorithm (which is very similar to the tree one):
+
+    public void dfs(List<List<Integer>> adjVertices, int start) {
+        boolean[] isVisited = new boolean[adjVertices.size()];
+        dfsRecursive(adjVertices, start, isVisited);
+    }
+    
+    private void dfsRecursive(List<List<Integer>> adjVertices, int currentIndex, boolean[] isVisited) {
+        isVisited[currentIndex] = true;
+        visit(currentIndex);
+        for (int dest : adjVertices.get(currentIndex)) {
+            if (!isVisited[dest]) {
+                dfsRecursive(dest, isVisited);
+            }
+        }
+    }
+
+https://www.baeldung.com/java-depth-first-search
+
+
 ## Tree
 
 ### Binary Tree Traversal
